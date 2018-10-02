@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo-type';
-import { TodoService } from '../todo.service';
+import { TodoService } from './todo.service';
 
 @Component({
 	selector: 'app-todo-detail',
@@ -34,8 +34,6 @@ export class TodoDetailComponent implements OnInit {
 	}
 
 	toggleDone(todo){
-		// todo.done = !todo.done;
-
 		this.todoService.toogleDoneItem(todo);
 
 	}
