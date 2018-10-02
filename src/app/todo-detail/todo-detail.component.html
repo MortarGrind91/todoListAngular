@@ -1,0 +1,29 @@
+ 	
+
+<div class="container">
+	<div style="margin-bottom: 25px;margin-top: 25px; display: flex;justify-content: center; align-items: center;">
+		<input type="text" class="form-control" placeholder="Опишите задачу" style="margin-right: 20px;"  [(ngModel)]="name">
+		<button type="button" class="btn" (click)="addTask(name)">Добавить</button>
+	</div>
+	<table class="table table-inverse">
+		<thead>
+			<th>№ задачи</th>
+			<th>Описание</th>
+			<th>Действие</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let todo of todos; let i = index ">
+				<th scope="row">#{{i+1}}</th>
+
+
+
+				<td   [ngClass]="{done: todo.done}" >{{todo.name}}</td>
+				<td>
+					<button style="margin-right:25px;" type="button" class="btn btn-success" (click)="toggleDone(todo)" >{{todo.done ? 'Выполнено' : 'Не выполнено'}}</button>
+					<button type="button" class="btn btn-danger" (click)="delTask(i)" >Удалить</button>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
